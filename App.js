@@ -5,19 +5,12 @@ import {
   Lato_700Bold_Italic,
   useFonts,
 } from "@expo-google-fonts/lato";
-import { createStore, combineReducers, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
-import ReduxThunk from "redux-thunk";
+import { PersistGate } from 'redux-persist/integration/react'
 
+import Text from "./components/Text";
 import TabNavigator from "./navigation/TabNavigator";
-import humanReducer from "./store/reducers/human";
-
-const rootReducer = combineReducers({
-  humans: humanReducer
-});
-
-const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
-
+import {store, persistor} from "./store"
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -33,7 +26,12 @@ export default function App() {
 
   return (
     <Provider store={store}>
+      <PersistGate
+        persistor={persistor}
+        loading={<Text variant="h2" center>Loading...</Text>}
+      >
         <TabNavigator />
+      </PersistGate>
     </Provider>
   );
 }
