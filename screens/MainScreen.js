@@ -1,6 +1,6 @@
 import {FlatList, Platform} from "react-native";
 import {useSelector} from "react-redux";
-import {HeaderButtons, Item} from 'react-navigation-header-buttons';
+import {HeaderButtons, Item} from "react-navigation-header-buttons";
 
 import HumanItem from "../components/HumanItem";
 import CustomHeaderButton from "../components/CustomHeaderButton";

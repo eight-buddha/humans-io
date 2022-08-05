@@ -6,8 +6,8 @@ import {
   useFonts,
 } from "@expo-google-fonts/lato";
 import { createStore, combineReducers, applyMiddleware } from "redux";
-import { Provider } from 'react-redux';
-import ReduxThunk from 'redux-thunk';
+import { Provider } from "react-redux";
+import ReduxThunk from "redux-thunk";
 
 import TabNavigator from "./navigation/TabNavigator";
 import humanReducer from "./store/reducers/human";
