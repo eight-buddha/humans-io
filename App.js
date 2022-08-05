@@ -4,13 +4,13 @@ import {
   Lato_700Bold,
   Lato_700Bold_Italic,
   useFonts,
-} from "@expo-google-fonts/lato";
-import { Provider } from "react-redux";
-import { PersistGate } from 'redux-persist/integration/react'
+} from '@expo-google-fonts/lato';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 
-import Text from "./components/Text";
-import TabNavigator from "./navigation/TabNavigator";
-import {store, persistor} from "./store"
+import Text from './components/Text';
+import TabNavigator from './navigation/TabNavigator';
+import { store, persistor } from './store';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -28,11 +28,14 @@ export default function App() {
     <Provider store={store}>
       <PersistGate
         persistor={persistor}
-        loading={<Text variant="h2" center>Loading...</Text>}
+        loading={
+          <Text variant="h2" center>
+            Loading...
+          </Text>
+        }
       >
         <TabNavigator />
       </PersistGate>
     </Provider>
   );
 }
-
