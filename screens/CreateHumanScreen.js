@@ -3,7 +3,6 @@ import {useDispatch} from "react-redux";
 import {useCallback, useState} from "react";
 
 import TextInput from "../components/TextInput";
-import Text from "../components/Text"
 import ImagePicker from "../components/ImagePicker";
 import * as humanActions from "../store/actions/human";
 
@@ -24,7 +23,6 @@ const CreateHumanScreen = (props) => {
 
     return (
         <View style={styles.container}>
-            <Text variant="h1" center>Add New Human</Text>
             <View style={styles.innerContainer}>
                 <ImagePicker onImageTaken={imageTakenHandler} />
 
@@ -38,6 +36,9 @@ const CreateHumanScreen = (props) => {
     )
 }
 
+CreateHumanScreen.navigationOptions = {
+    headerTitle: "Add New Human",
+}
 
 const styles = StyleSheet.create({
     container: {
