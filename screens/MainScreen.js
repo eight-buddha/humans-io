@@ -1,9 +1,10 @@
+import React from 'react';
 import { FlatList, Platform } from 'react-native';
-import { useSelector } from 'react-redux';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
+import { useSelector } from 'react-redux';
 
-import HumanItem from '../components/HumanItem';
 import CustomHeaderButton from '../components/CustomHeaderButton';
+import HumanItem from '../components/HumanItem';
 
 const MainScreen = props => {
   const humans = useSelector(state => state.humans.humans);

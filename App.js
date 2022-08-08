@@ -5,12 +5,13 @@ import {
   Lato_700Bold_Italic,
   useFonts,
 } from '@expo-google-fonts/lato';
+import React from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import Text from './components/Text';
 import TabNavigator from './navigation/TabNavigator';
-import { store, persistor } from './store';
+import { persistor, store } from './store';
 
 export default function App() {
   const [fontsLoaded] = useFonts({

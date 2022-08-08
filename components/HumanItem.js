@@ -1,4 +1,5 @@
-import { TouchableOpacity, Image, StyleSheet } from 'react-native';
+import React from 'react';
+import { Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 import Text from '../components/Text';
 

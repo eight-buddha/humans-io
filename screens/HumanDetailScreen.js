@@ -1,4 +1,5 @@
-import { View, Image, StyleSheet } from 'react-native';
+import React from 'react';
+import { Image, StyleSheet, View } from 'react-native';
 import { useSelector } from 'react-redux';
 
 import Text from '../components/Text';

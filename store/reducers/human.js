@@ -1,5 +1,5 @@
-import { ADD_HUMAN } from '../actions/human';
 import Human from '../../models/human';
+import { ADD_HUMAN } from '../actions/human';
 
 const initialState = {
   humans: [],
@@ -7,7 +7,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case ADD_HUMAN:
+    case ADD_HUMAN: {
       const newHuman = new Human(
         action.humanData.id,
         action.humanData.name,
@@ -17,6 +17,7 @@ export default (state = initialState, action) => {
       return {
         humans: state.humans.concat(newHuman),
       };
+    }
     default:
       return state;
   }

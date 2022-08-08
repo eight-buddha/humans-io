@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { View, Button, Image, Text, StyleSheet } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
+import React, { useState } from 'react';
+import { Button, Image, StyleSheet, Text, View } from 'react-native';
 
 const ImgPicker = props => {
   const [status, requestPermission] = ImagePicker.useCameraPermissions();

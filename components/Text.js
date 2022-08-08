@@ -1,3 +1,4 @@
+import React from 'react';
 import { Text as RNText, StyleSheet } from 'react-native';
 
 const Text = ({ center, bold, variant = 'body', style, ...rest }) => {

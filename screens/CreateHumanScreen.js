@@ -1,14 +1,15 @@
-import { View, StyleSheet, Button } from 'react-native';
+import React, { useCallback, useState } from 'react';
+import { Button, StyleSheet, View } from 'react-native';
 import { useDispatch } from 'react-redux';
-import { useCallback, useState } from 'react';
 
-import TextInput from '../components/TextInput';
 import ImagePicker from '../components/ImagePicker';
+import TextInput from '../components/TextInput';
 import * as humanActions from '../store/actions/human';
 
 const CreateHumanScreen = props => {
   const [humanName, setHumanName] = useState('');
   const [image, setImage] = useState('');
+  const { navigation } = props;
 
   const dispatch = useDispatch();
 
@@ -18,8 +19,8 @@ const CreateHumanScreen = props => {
 
   const handleSave = useCallback(() => {
     dispatch(humanActions.addHuman(humanName, image));
-    props.navigation.navigate('Main');
-  }, [humanName, image]);
+    navigation.navigate('Main');
+  }, [dispatch, humanName, image, navigation]);
 
   return (
     <View style={styles.container}>

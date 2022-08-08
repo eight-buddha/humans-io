@@ -1,9 +1,9 @@
-import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
-import MainScreen from '../screens/MainScreen';
 import CreateHumanScreen from '../screens/CreateHumanScreen';
 import HumanDetailScreen from '../screens/HumanDetailScreen';
+import MainScreen from '../screens/MainScreen';
 
 const MainNavigator = createStackNavigator({
   Main: MainScreen,
