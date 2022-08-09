@@ -1,9 +1,9 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { applyMiddleware, combineReducers, createStore } from 'redux';
-import { persistReducer, persistStore } from 'redux-persist';
-import ReduxThunk from 'redux-thunk';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { persistReducer } from 'redux-persist';
+import thunk from 'redux-thunk';
 
-import humanReducer from './reducers/human';
+import humanReducer from './humanSlice';
 
 const rootReducer = combineReducers({
   humans: humanReducer,
@@ -16,5 +16,9 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-export const store = createStore(persistedReducer, applyMiddleware(ReduxThunk));
-export const persistor = persistStore(store);
+export const setupStore = () => {
+  return configureStore({
+    reducer: persistedReducer,
+    middleware: [thunk],
+  });
+};

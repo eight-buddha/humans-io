@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import ImagePicker from '../components/ImagePicker';
 import TextInput from '../components/TextInput';
-import * as humanActions from '../store/actions/human';
+import { addHuman } from '../store/humanAction';
 
 const CreateHumanScreen = props => {
   const [humanName, setHumanName] = useState('');
@@ -18,7 +18,7 @@ const CreateHumanScreen = props => {
   }, []);
 
   const handleSave = useCallback(() => {
-    dispatch(humanActions.addHuman(humanName, image));
+    dispatch(addHuman(humanName, image));
     navigation.navigate('Main');
   }, [dispatch, humanName, image, navigation]);
 

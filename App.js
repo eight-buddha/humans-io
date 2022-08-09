@@ -7,11 +7,15 @@ import {
 } from '@expo-google-fonts/lato';
 import React from 'react';
 import { Provider } from 'react-redux';
+import { persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import Text from './components/Text';
 import TabNavigator from './navigation/TabNavigator';
-import { persistor, store } from './store';
+import { setupStore } from './store';
+
+const store = setupStore();
+const persistor = persistStore(store);
 
 export default function App() {
   const [fontsLoaded] = useFonts({
