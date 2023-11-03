@@ -7,7 +7,7 @@ const HumanItem = props => {
   return (
     <TouchableOpacity onPress={props.onPress} style={styles.item}>
       <Image source={{ uri: props.image }} style={styles.image} />
-      <Text variant="h1" numberOfLines={1} style={styles.name}>
+      <Text variant="h1" numberOfLines={2} style={styles.name}>
         {props.name}
       </Text>
     </TouchableOpacity>
@@ -36,6 +36,8 @@ const styles = StyleSheet.create({
     fontFamily: 'Lato_700Bold',
     color: '#3f3f46',
     paddingLeft: 15,
+    flex: 1,
+    flexWrap: 'wrap',
   },
 });
 
