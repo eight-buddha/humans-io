@@ -15,8 +15,8 @@ const ImgPicker = props => {
         aspect: [1, 1],
         quality: 0.8,
       });
-      setPickedImage(image.uri);
-      props.onImageTaken(image.uri);
+      setPickedImage(image.assets[0].uri);
+      props.onImageTaken(image.assets[0].uri);
     }
   };
 
